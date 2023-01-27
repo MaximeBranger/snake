@@ -1,0 +1,118 @@
+/* mako-regular - latin */
+@font-face {
+    font-family: 'Mako';
+    font-style: normal;
+    font-weight: 400;
+    src: local(''),
+        url('../fonts/mako-v18-latin-regular.woff2') format('woff2'),
+        /* Chrome 26+, Opera 23+, Firefox 39+ */
+        url('../fonts/mako-v18-latin-regular.woff') format('woff');
+    /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+body {
+    display: grid;
+    min-height: 100vh;
+    min-height: 100dvh;
+    grid-template-rows: auto 1fr auto;
+    font-family: 'Mako';
+    margin: 0;
+    background-color: grey;
+}
+
+.container {
+    max-width: 50rem;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.score {
+    display: flex;
+    justify-content: center;
+    padding-block: 1rem;
+    font-size: 2rem;
+}
+
+.restart {
+    display: none;
+    position: absolute;
+    width: 16rem;
+    left: calc(50% - 8rem);
+    top: 35%;
+    flex-direction: column;
+    align-items: center;
+}
+
+.restart p {
+    color: white;
+    text-align: center;
+}
+
+#restart {
+    width: 10rem;
+    height: 3rem;
+    border-radius: 3rem;
+    border: 0;
+    font-size: 1.2rem;
+}
+
+.commands {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    margin-inline: 4rem;
+    margin-block-start: 1rem;
+}
+
+.commands button {
+    border-radius: 5rem;
+    border: 0;
+    width: 6rem;
+    height: 6rem;
+    justify-self: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 0 .3rem;
+    border: 0;
+    background-color: black;
+}
+
+#up {
+    grid-row-start: 1;
+    grid-row-end: 2;
+    grid-column-start: 2;
+    grid-column-end: 3;
+    align-self: flex-end;
+    background-image: url("../images/arrow_top.svg");
+}
+
+#left {
+    grid-row-start: 2;
+    grid-row-end: 3;
+    grid-column-start: 1;
+    grid-column-end: 2;
+    transform: rotate(-90deg);
+    justify-self: end;
+    background-image: url("../images/arrow_left.svg");
+}
+
+#right {
+    grid-row-start: 2;
+    grid-row-end: 3;
+    grid-column-start: 3;
+    grid-column-end: 4;
+    transform: rotate(90deg);
+    justify-self: start;
+    background-image: url("../images/arrow_right.svg");
+}
+
+#down {
+    grid-row-start: 3;
+    grid-row-end: 4;
+    grid-column-start: 2;
+    grid-column-end: 3;
+    transform: rotate(180deg);
+    align-self: flex-start;
+    background-image: url("../images/arrow_bottom.svg");
+}
